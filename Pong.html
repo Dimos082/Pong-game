@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ <!--  https://github.com/Dimos082/Pong_game -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +33,19 @@
     // Winning condition (in sake of QA it was set to 2 points, default = 10)
     const winScore = 2;
 
+    // HTML5 sound. Recorded and voiced by me, so no copyrights involved :-)
+    let hitSound1 = new Audio("sound/hitsound1.wav")
+    let hitSound2 = new Audio("sound/hitsound2.wav")
+    let sideHitSound = new Audio("sound/sidehitsound.wav")
+    let offSideSound = new Audio("sound/offsidesound.wav")
+    let bellSound = new Audio("sound/bellsound.wav")
+    let winSound1 = new Audio("sound/winsound1.wav")
+    // let winSound2 = new Audio("sound/winsound2.wav")
+    // let winSound3 = new Audio("sound/winsound3.wav")
+    let lostSound1 = new Audio("sound/lostsound1.wav")
+    // let lostSound2 = new Audio("sound/lostsound2.wav")
+    // let lostSound3 = new Audio("sound/lostsound3.wav")
+
     let showWinScreen = true;
 
     let paddle1X = 100;
@@ -40,9 +53,7 @@
     const paddleWidth = 100;
     const paddleThickness = 12;
 
-    // let mySound;
-
-    // Gereral func that calls all others + FPS + moseclick
+    // Gereral func that calls all others + FPS + mouseclick
     window.onload = function () {
         canvas = document.getElementById("gameCanvas");
         canvasContext = canvas.getContext("2d");
@@ -92,19 +103,21 @@
     //     ballX = canvas.width/2;
     //     ballY = canvas.height/2;
 
-    // Set ball's position far against paddle2x if paddle 1 wins 1 point
+    // Set ball's position far against paddle2x if paddle 1 (comp) wins 1 point
     function ballResetPaddle1x() {
         if (player1Score >= winScore) {
             showWinScreen = true;
+            lostSound1.play();
         } else
             ballX = 50;
         ballY = 50;
         ballSpeedX = 5; // ball direction
     }
-    // Set ball's position far against paddle2x if paddle 2 wins 1 point
+    // Set ball's position far against paddle2x if paddle 2 (human) wins 1 point
     function ballResetPaddle2x() {
         if (player2Score >= winScore) {
             showWinScreen = true;
+            winSound1.play();
         } else
             ballX = 380;
         ballY = 540;
@@ -132,10 +145,12 @@
         // Ball's bounce against the left wall
         if (ballX < 10) {
             ballSpeedX = -ballSpeedX;
+            sideHitSound.play();
         }
         // Ball's bounce against the right wall
         if (ballX > 390) {
             ballSpeedX = -ballSpeedX;
+            sideHitSound.play();
         }
         // Ball's bounce against computer's paddle
         if (ballY < 20) {
@@ -145,10 +160,12 @@
                 // When ball touches the paddle
                 let deltaX = ballX - (paddle2X + paddleWidth / 2);
                 ballSpeedX = deltaX * 0.35;
+                hitSound2.play();
             } else {
-                // Winning condition for computer
+                // Winning condition for human player
                 player2Score++; //adds one point
-                // ball position afrer computer scores
+                bellSound.play(); //plays sound
+                // ball position afrer human scores
                 ballResetPaddle2x();
             }
         }
@@ -160,10 +177,12 @@
                 // Adds speed to ball when it hits paddle's sides
                 let deltaX = ballX - (paddle1X + paddleWidth / 2);
                 ballSpeedX = deltaX * 0.35;
+                hitSound1.play();
             } else {
-                // Winning condition for human player
+                // Winning condition for computer player
                 player1Score++; //adds one point
-                // ball position afrer human scores
+                offSideSound.play(); //plays sound
+                // ball position afrer computer scores
                 ballResetPaddle1x();
             }
         }
