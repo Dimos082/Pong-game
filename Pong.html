@@ -11,12 +11,16 @@
             /* position: absolute; */
             border: skyblue solid 0.5px;
             border-radius: 10px;
+            cursor: none;
         }
     </style>
 </head>
 
 <body>
     <canvas id="gameCanvas" width="400" height="600"></canvas>
+    <!-- <button onclick="AI_easy()">Have mercy!</button> -->
+    <!-- <button onclick="AI_normal()">I want some challenge!</button> -->
+    <button onclick="ballReset()">My ball is stuck!</button>
     <!-- Setting elements expected to be somewhat here -->
 </body>
 
@@ -113,16 +117,13 @@
         }
     }
 
-    // Recreates initial position of the ball after each match (AT CENTER)
-    // function ballReset() {
-    //     if(player1Score >=winScore ||
-    //        player2Score >=winScore){
-    //            showWinScreen = true;
-    //        }else
-    //        ballSpeedStart = -ballSpeedStart;
-    //     ballX = canvas.width/2;
-    //     ballY = canvas.height/2;
-    // }
+    // Recreates initial position of the ball (for reset button)
+    function ballReset() {
+        ballX = 50;
+        ballY = 50;
+        ballSpeedX = 4;
+        ballSpeedY = 10;
+    }
 
     // Set ball's position far against paddle1x if paddle 2 (comp) wins 1 point
     function ballResetPaddle1x() {
@@ -153,30 +154,45 @@
             paddle2X -= 15;
         }
     }
+//     function AI_easy() {
+//         AI("pause");
+//             let paddle2XCenter = paddle2X + (paddleWidth / 2);
+//         if (paddle2XCenter < ballX - 35) {
+//             paddle2X += 2;
+//         } else if (paddle2XCenter > ballX + 35) {
+//             paddle2X -= 2;
+//         }
+// }
     // Adds movement to ball and computer's paddle
     function moveEverything() {
         if (showWinScreen == true) {
             return;
         }
-        // Enables computer player
+        // Enables computer player's AI
         AI();
+        // AI_easy();
         // Adds speed to ball 
         ballX += ballSpeedX;
         ballY += ballSpeedY;
         // Ball's bounce against the left wall
-        if (ballX < 10) {
+        if (ballX <= 0) {
             ballSpeedX = -ballSpeedX;
             sideHitSound.play();
             console.log(ballX, ballY);
+        }else {
+            ballSpeedX = ballSpeedX;
         }
         // Ball's bounce against the right wall
-        if (ballX > 390) {
+        if (ballX >= 395) {
             ballSpeedX = -ballSpeedX;
             sideHitSound.play();
             console.log(ballX, ballY);
+        } else {
+            ballSpeedX = ballSpeedX;
         }
+
         // Ball's bounce against computer's paddle
-        if (ballY <= 20) {
+        if (ballY < 20) {
             if (ballX > paddle2X - paddleWidth * 0.1 &&
                 ballX < paddle2X + paddleWidth * 1.1) {
                 ballSpeedY = -ballSpeedY;
@@ -193,7 +209,7 @@
             }
         }
         // Ball's bounce against human's paddle
-        if (ballY >= 580) {
+        if (ballY > 580) {
             if (ballX > paddle1X - paddleWidth * 0.1 &&
                 ballX < paddle1X + paddleWidth * 1.1) {
                 ballSpeedY = -ballSpeedY;
