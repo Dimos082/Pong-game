@@ -16,16 +16,13 @@ function ballReset() {
     ballSpeedY = 10;
     }
 
-function disableAI(){
-    window.AI = function(){};
-}
-
 function AI_easy() {
-    disableAI();
+    window.AI = function(){
         let paddle2XCenter = paddle2X + (paddleWidth / 2);
     if (paddle2XCenter < ballX - 35) {
-         paddle2X += 2;
+         paddle2X += 4;
     } else if (paddle2XCenter > ballX + 35) {
-         paddle2X -= 2;
+         paddle2X -= 4;
     }
+  }
 }
