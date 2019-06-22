@@ -1,12 +1,6 @@
 function button1() {
     winScore = 40;
 }
-function button2() {
-    winScore = 10;
-}
-function button3() {
-    winScore = 100;
-}
 
 // Recreates the initial position of the ball (for reset button)
 function ballReset() {
@@ -23,6 +17,28 @@ function AI_easy() {
          paddle2X += 4;
     } else if (paddle2XCenter > ballX + 35) {
          paddle2X -= 4;
+    }
+  }
+}
+
+function AI_normal() {
+    window.AI = function(){
+    let paddle2XCenter = paddle2X + (paddleWidth / 2);
+    if (paddle2XCenter < ballX - 35) {
+        paddle2X += 15;
+    } else if (paddle2XCenter > ballX + 35) {
+        paddle2X -= 15;
+    }
+  }
+}
+
+function AI_hard() {
+    window.AI = function(){
+    let paddle2XCenter = paddle2X + (paddleWidth / 2);
+    if (paddle2XCenter < ballX - 35) {
+        paddle2X += 30;
+    } else if (paddle2XCenter > ballX + 35) {
+        paddle2X -= 30;
     }
   }
 }
