@@ -126,7 +126,6 @@
         }
         // Enables computer player's AI
         AI();
-        // AI_easy();
         // Adds speed to ball 
         ballX += ballSpeedX;
         ballY += ballSpeedY;
@@ -135,16 +134,12 @@
             ballSpeedX = -ballSpeedX;
             sideHitSound.play();
             console.log(ballX, ballY);
-        }else {
-            ballSpeedX = ballSpeedX;
         }
         // Ball's bounce against the right wall
         if (ballX >= 395) {
             ballSpeedX = -ballSpeedX;
             sideHitSound.play();
             console.log(ballX, ballY);
-        } else {
-            ballSpeedX = ballSpeedX;
         }
         // Ball's bounce against computer's paddle
         if (ballY < 20) {
