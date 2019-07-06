@@ -130,16 +130,22 @@
         ballX += ballSpeedX;
         ballY += ballSpeedY;
         // Ball's bounce against the left wall
-        if (ballX <= 0) {
+        if (ballX - 5 < 0) {
+            ballX = 5; //Declares a horizontal min for ball position
             ballSpeedX = -ballSpeedX;
             sideHitSound.play();
             console.log(ballX, ballY);
+        } else {
+            ballSpeedX = ballSpeedX;
         }
         // Ball's bounce against the right wall
-        if (ballX >= 395) {
+        if (ballX + 5 > 400) {
+            ballX = 395;  //Declares a horizontal max for ball position
             ballSpeedX = -ballSpeedX;
             sideHitSound.play();
             console.log(ballX, ballY);
+        } else {
+            ballSpeedX = ballSpeedX;
         }
         // Ball's bounce against computer's paddle
         if (ballY < 20) {
@@ -227,7 +233,7 @@
     }
     // Setting the net between players
     function drawNet() {
-        for (var i = 0; i < canvas.width; i += 40) {
+        for (let i = 0; i < canvas.width; i += 40) {
             colorRect(i + 10, canvas.height / 2, 20, 2, "white");
         }
         // colorRect(0, canvas.height/2, 400, 2, "white");
