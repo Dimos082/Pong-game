@@ -10,6 +10,7 @@ function ballReset() {
     ballSpeedY = 10;
     }
 
+// Changing The Execution Context Of AI function
 function AI_easy() {
     window.AI = function(){
         let paddle2XCenter = paddle2X + (paddleWidth / 2);
