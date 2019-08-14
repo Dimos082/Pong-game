@@ -10,6 +10,12 @@ function ballReset() {
     ballSpeedY = 10;
     }
 
+    function changeDifficulty() {
+        let easy = AI_easy();
+        let normal = AI_normal();
+        let hard = AI_hard();
+        }
+
 // Changing The Execution Context Of AI function
 function AI_easy() {
     window.AI = function(){
@@ -18,7 +24,7 @@ function AI_easy() {
          paddle2X += 4;
     } else if (paddle2XCenter > ballX + 35) {
          paddle2X -= 4;
-    }
+    }console.log('easy');
   }
 }
 
@@ -29,7 +35,7 @@ function AI_normal() {
         paddle2X += 15;
     } else if (paddle2XCenter > ballX + 35) {
         paddle2X -= 15;
-    }
+    }console.log('normal');
   }
 }
 
@@ -40,6 +46,7 @@ function AI_hard() {
         paddle2X += 30;
     } else if (paddle2XCenter > ballX + 35) {
         paddle2X -= 30;
-    }
+    }console.log('hard');
   }
 }
+
