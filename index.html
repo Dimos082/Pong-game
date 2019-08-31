@@ -18,32 +18,26 @@
 
 <body>
     <canvas id="gameCanvas" width="400" height="600"></canvas>
-    <!-- <button onclick="AI_easy()">Have mercy!</button> -->
-    <!-- <button onclick="AI_normal()">I want some challenge!</button> -->
 <div>
     <button onclick="ballReset()">My ball is stuck!</button>
-    <!-- <button onclick="button1()">Button1</button> -->
-    <button onclick="AI_hard()">Its too easy!</button>
+    <!-- <button onclick="AI_hard()">Its too easy!</button>
     <button onclick="AI_normal()">Reset difficulty</button>
-    <button onclick="AI_easy()">Its too hard!</button>
-    <!-- <select>
-        <option value="AI_easy()">easy</option>
-        <option value="AI_normal()">normal</option>
-        <option value="AI_hard()">hard</option>
-      </select>
-      <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
-          </div> -->
+    <button onclick="AI_easy()">Its too hard!</button> -->
+     
+    <select id="difficulty" onchange="changeDifficulty()">
+        <option value="" disabled selected>Wanna change the difficulty?</option>
+        <option value="super_easy">Massacre of the Innocents</option>
+        <option value="easy">Have mercy!</option>
+        <option value="normal">A regular,everyday,normal</option>
+        <option value="hard">I want some challenge</option>
+        <option value="super_hard">IMPOSSIBRU!</option>
+    </select>
+
 </div>
     <!-- Setting elements expected to be somewhere here -->
 </body>
 
 <script src="resources/js/main.js"></script>
 <script src="resources/js/controls.js"></script>
-
+<p id="text1"></p> <!-- test field -->
 </html>
