@@ -134,7 +134,7 @@
             ballX = 5; //Declares a horizontal min for ball position
             ballSpeedX = -ballSpeedX;
             sideHitSound.play();
-            console.log(ballX, ballY);
+            // console.log(ballX, ballY);
         } else {
             ballSpeedX = ballSpeedX;
         }
@@ -143,7 +143,7 @@
             ballX = 395;  //Declares a horizontal max for ball position
             ballSpeedX = -ballSpeedX;
             sideHitSound.play();
-            console.log(ballX, ballY);
+            // console.log(ballX, ballY);
         } else {
             ballSpeedX = ballSpeedX;
         }
