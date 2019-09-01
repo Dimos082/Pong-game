@@ -6,18 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="resources/img/favicon.ico">
+    <link rel="stylesheet" href="resources/style.css">
     <title>pong</title>
-    <style>
-        #gameCanvas {
-            /* position: absolute; */
-            border: skyblue solid 0.5px;
-            border-radius: 10px;
-            cursor: none;
-        }
-        div {
-            display:flex;
-        }
-    </style>
 </head>
 
 <body>
@@ -27,7 +17,7 @@
     <button onclick="AI_hard()">Its too easy!</button>
     <button onclick="AI_normal()">Reset difficulty</button>
     <button onclick="AI_easy()">Its too hard!</button> -->
-     
+    <img id="image" src="resources/img/Difficulty.png" height="35" width="25"></img>
     <select id="difficulty" onchange="changeDifficulty()">
         <option value="" disabled selected>Wanna change the difficulty?</option>
         <option value="super_easy">Massacre of the Innocents</option>
@@ -36,7 +26,6 @@
         <option value="hard">I want some challenge</option>
         <option value="super_hard">IMPOSSIBRU!</option>
     </select>
-    <img id="image" src="resources/img/Difficulty.png" height="35" width="25"></img>
   </div>
 </body>
 
