@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="resources/img/favicon.ico">
     <title>pong</title>
     <style>
         #gameCanvas {
@@ -13,14 +14,17 @@
             border-radius: 10px;
             cursor: none;
         }
+        div {
+            display:flex;
+        }
     </style>
 </head>
 
 <body>
     <canvas id="gameCanvas" width="400" height="600"></canvas>
-<div>
-    <button onclick="ballReset()">My ball is stuck!</button>
-    <!-- <button onclick="AI_hard()">Its too easy!</button>
+  <div>
+    <!-- <button onclick="ballReset()">My ball is stuck!</button>
+    <button onclick="AI_hard()">Its too easy!</button>
     <button onclick="AI_normal()">Reset difficulty</button>
     <button onclick="AI_easy()">Its too hard!</button> -->
      
@@ -32,12 +36,11 @@
         <option value="hard">I want some challenge</option>
         <option value="super_hard">IMPOSSIBRU!</option>
     </select>
-
-</div>
-    <!-- Setting elements expected to be somewhere here -->
+    <img id="image" src="resources/img/Difficulty.png" height="35" width="25"></img>
+  </div>
 </body>
 
 <script src="resources/js/main.js"></script>
 <script src="resources/js/controls.js"></script>
-<p id="text1"></p> <!-- test field -->
+
 </html>
