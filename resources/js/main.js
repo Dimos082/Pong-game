@@ -1,7 +1,7 @@
     let canvas;
     let canvasContext;
     let ballX = 50;
-    let ballY = 50;
+    let ballY = 50; 
     let ballSpeedX = 4;
     let ballSpeedY = 10;
 

@@ -1,10 +1,20 @@
 // Recreates the initial position of the ball (for reset button)
-function ballReset() {
-    ballX = 50;
-    ballY = 50;
-    ballSpeedX = 4;
-    ballSpeedY = 10;
-    }
+// function ballReset() {
+//     ballX = 50;
+//     ballY = 50;
+//     ballSpeedX = 4;
+//     ballSpeedY = 10;
+//     }
+
+function mute(){
+    hitSound1.muted ^= true;
+    hitSound2.muted ^= true;
+    sideHitSound.muted ^= true;
+    offSideSound.muted ^= true;
+    bellSound.muted ^= true;
+    window.playWinSound ^= true;
+    window.playLostSound.muted ^= true;
+}
 
 // Changing The Execution Context Of AI function
 function AI_super_easy() {
@@ -100,3 +110,4 @@ case
 }
 console.log(z);
   }
+
