@@ -63,7 +63,7 @@ function AI_super_hard() {
     } else if (paddle2XCenter > ballX + 35) {
         paddle2X -= 50;
     }
-    console.log('impossibru');
+    console.log('super hard');
   }
 }
 
@@ -75,22 +75,27 @@ switch
 case
  "super_easy":
  AI_super_easy()
+ document.getElementById("image").src = "resources/img/Difficulty_0.png";
     break;
 case
  "easy":
  AI_easy()
+ document.getElementById("image").src = "resources/img/Difficulty_1.png";
     break;
 case
  "normal":
  AI_normal()
+ document.getElementById("image").src = "resources/img/Difficulty_2.png";
     break;  
 case
  "hard":
  AI_hard()
+ document.getElementById("image").src = "resources/img/Difficulty_3.png";
     break; 
 case
  "super_hard":
  AI_super_hard()
+ document.getElementById("image").src = "resources/img/Difficulty_4.png";
     break; 
 }
 console.log(z);
