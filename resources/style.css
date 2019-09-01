@@ -1,0 +1,45 @@
+#gameCanvas {
+    border-radius: 10px;
+    cursor: grabbing;
+}
+div {
+    display:flex;
+}
+
+/* For mobile devices */
+@media (max-height: 800px) {
+body {
+zoom: 1.1; 
+-moz-transform: scale(1.1);
+-moz-transform-origin: 0 0;
+background-size: 100%;
+} 
+ } @media (max-height: 700px) {
+body {
+zoom: 0.9; 
+-moz-transform: scale(0.9);
+-moz-transform-origin: 0 0;
+background-size: 100%;
+}
+ } @media (max-height: 600px) {
+body {
+zoom: 0.8; 
+-moz-transform: scale(0.8);
+-moz-transform-origin: 0 0;
+background-size: 100%;
+}
+ } @media (max-height: 500px) {
+body {
+zoom: 0.7; 
+-moz-transform: scale(0.7);
+-moz-transform-origin: 0 0;
+background-size: 100%;
+}
+ } @media (max-height: 430px) {
+body {
+zoom: 0.65; 
+-moz-transform: scale(0.65);
+-moz-transform-origin: 0 0;
+background-size: 100%;
+}
+ }
