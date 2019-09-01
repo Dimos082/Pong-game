@@ -238,3 +238,4 @@
         }
         // colorRect(0, canvas.height/2, 400, 2, "white");
     }
+
