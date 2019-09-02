@@ -6,14 +6,26 @@
 //     ballSpeedY = 10;
 //     }
 
+// Toggle for mute all sonds
 function mute(){
     hitSound1.muted ^= true;
     hitSound2.muted ^= true;
     sideHitSound.muted ^= true;
     offSideSound.muted ^= true;
     bellSound.muted ^= true;
-    window.playWinSound ^= true;
-    window.playLostSound.muted ^= true;
+    winSounds = [
+        new Audio("resources/sound/winsound1.mp3"),
+        new Audio("resources/sound/winsound2.mp3"),
+        new Audio("resources/sound/winsound3.mp3"),
+        new Audio("resources/sound/winsound4.mp3"),
+        new Audio("resources/sound/winsound5.mp3")
+        ].muted ^= true;
+    lostSounds = [
+            new Audio("resources/sound/lostsound1.mp3"),
+            new Audio("resources/sound/lostsound2.mp3"),
+            new Audio("resources/sound/lostsound3.mp3"),
+            new Audio("resources/sound/lostsound4.mp3")
+            ].muted ^= true;
 }
 
 // Changing The Execution Context Of AI function
