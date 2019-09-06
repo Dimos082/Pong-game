@@ -94,7 +94,8 @@
     function ballResetPaddle1x() {
         if (player1Score >= winScore) {
             showWinScreen = true;
-            playLostSound(); //calls a function with random loosing sound
+            if (hitSound1.muted !=true) {
+            playLostSound() } //if other sounds are on - calls a function with random losing sound
         } else
             ballX = 50;
         ballY = 50;
@@ -104,7 +105,8 @@
     function ballResetPaddle2x() {
         if (player2Score >= winScore) {
             showWinScreen = true;
-            playWinSound(); //calls a function with random winning sound
+            if (hitSound1.muted != true) {
+            playWinSound() } //if other sounds are on - calls a function with random winning sound
         } else
             ballX = 380;
         ballY = 540;
