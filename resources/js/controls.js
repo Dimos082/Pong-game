@@ -6,13 +6,14 @@
 //     ballSpeedY = 10;
 //     }
 
-// Toggle for mute all sonds
+// Toggle for mute
 function mute() {
     hitSound1.muted ^= true;
     hitSound2.muted ^= true;
     sideHitSound.muted ^= true;
     offSideSound.muted ^= true;
     bellSound.muted ^= true;
+    naniSound.muted ^= true;
 }
 
 // Changing The Execution Context Of AI function
@@ -105,6 +106,7 @@ case
  "super_hard":
  AI_super_hard()
  document.getElementById("image").src = "resources/img/Difficulty_4.png";
+ naniSound.play()
     break; 
 }
 console.log(z);

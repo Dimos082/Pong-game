@@ -8,7 +8,7 @@
     let player1Score = 0;
     let player2Score = 0;
     // Winning condition (in sake of QA it was set to 3 points, default = 10)
-    let winScore = 3;
+    let winScore = 1;
 
     // HTML5 sound. Recorded and voiced by me, so no copyrights involved :-)
     let hitSound1 = new Audio("resources/sound/hitsound1.mp3");
@@ -16,6 +16,7 @@
     let sideHitSound = new Audio("resources/sound/sidehitsound.mp3");
     let offSideSound = new Audio("resources/sound/offsidesound.mp3");
     let bellSound = new Audio("resources/sound/bellsound.mp3");
+    let naniSound = new Audio("resources/sound/nanisound.mp3");
 
     let winSounds = [
     new Audio("resources/sound/winsound1.mp3"),
