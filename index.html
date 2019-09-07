@@ -14,18 +14,24 @@
     <canvas id="gameCanvas" width="400" height="600"></canvas>
   <div>
     <button onclick="mute()" >🔊</button>
-    <!-- <button onclick="AI_hard()">Its too easy!</button>
-    <button onclick="AI_normal()">Reset difficulty</button>
-    <button onclick="AI_easy()">Its too hard!</button> -->
+    <!-- <button onclick="" >test</button> -->
     <img id="image" src="resources/img/Difficulty.png" height="35" width="25"></img>
     <select id="difficulty" onchange="changeDifficulty()">
         <option value="" disabled selected>Wanna change the difficulty?</option>
         <option value="super_easy">Massacre of the Innocents</option>
         <option value="easy">Have mercy!</option>
-        <option value="normal">A regular,everyday,normal</option>
+        <option value="normal">A regular, everyday, normal</option>
         <option value="hard">I want some challenge</option>
         <option value="super_hard">IMPOSSIBRU!</option>
     </select>
+    <select id="color" class="skyblue" onchange="changeColor(this.className=this.options[this.selectedIndex].className)">
+      <option class="skyblue" value="skyblue" > </option>
+      <option class="black" value="black" > </option>
+      <option class="green" value="green"> </option>
+      <option class="red" value="red"> </option>
+      <option class="blue" value="blue"> </option>
+      <option class="orange" value="orange"> </option>
+  </select>
   </div>
 </body>
 
