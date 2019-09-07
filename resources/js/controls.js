@@ -14,6 +14,7 @@ function mute() {
     offSideSound.muted ^= true;
     bellSound.muted ^= true;
     naniSound.muted ^= true;
+    console.log('mute')
 }
 
 // Changing The Execution Context Of AI function
@@ -77,6 +78,139 @@ function AI_super_hard() {
   }
 }
 
+// Changing The Execution Context Of drawEverything function
+function skyblueColor() {
+    window.drawEverything = function(){
+         // Background shape
+         colorRect(0, 0, canvas.width, canvas.height, "skyblue");
+         if (showWinScreen) {
+             canvasContext.fillStyle = "white";
+             canvasContext.fillText("CLICK TO START", 70, canvas.height / 2);
+             canvasContext.font = "bold 30px Arial";
+             if (player1Score >= winScore) {
+                 canvasContext.fillText("Soulless machine won!", 35, 200);
+             } else if (player2Score >= winScore) {
+                 canvasContext.fillText("A WINRAR is you!", 70, 200);
+             } return;
+    }
+    colorCircle(ballX, ballY, 7, "white");
+    colorRect(paddle1X, 587, paddleWidth, paddleThickness, "white");
+    colorRect(paddle2X, 0, paddleWidth, paddleThickness, "white");
+    canvasContext.fillText(player1Score, 50, 100);
+    canvasContext.fillText(player2Score, 50, 500);
+    drawNet();
+}}
+
+function blackColor() {
+    window.drawEverything = function(){
+         // Background shape
+         colorRect(0, 0, canvas.width, canvas.height, "black");
+         if (showWinScreen) {
+             canvasContext.fillStyle = "white";
+             canvasContext.fillText("CLICK TO START", 70, canvas.height / 2);
+             canvasContext.font = "bold 30px Arial";
+             if (player1Score >= winScore) {
+                 canvasContext.fillText("Soulless machine won!", 35, 200);
+             } else if (player2Score >= winScore) {
+                 canvasContext.fillText("A WINRAR is you!", 70, 200);
+             } return;
+    }
+    colorCircle(ballX, ballY, 7, "white");
+    colorRect(paddle1X, 587, paddleWidth, paddleThickness, "white");
+    colorRect(paddle2X, 0, paddleWidth, paddleThickness, "white");
+    canvasContext.fillText(player1Score, 50, 100);
+    canvasContext.fillText(player2Score, 50, 500);
+    drawNet();
+}}
+
+function greenColor() {
+    window.drawEverything = function(){
+         // Background shape
+         colorRect(0, 0, canvas.width, canvas.height, "green");
+         if (showWinScreen) {
+             canvasContext.fillStyle = "white";
+             canvasContext.fillText("CLICK TO START", 70, canvas.height / 2);
+             canvasContext.font = "bold 30px Arial";
+             if (player1Score >= winScore) {
+                 canvasContext.fillText("Soulless machine won!", 35, 200);
+             } else if (player2Score >= winScore) {
+                 canvasContext.fillText("A WINRAR is you!", 70, 200);
+             } return;
+    }
+    colorCircle(ballX, ballY, 7, "white");
+    colorRect(paddle1X, 587, paddleWidth, paddleThickness, "white");
+    colorRect(paddle2X, 0, paddleWidth, paddleThickness, "white");
+    canvasContext.fillText(player1Score, 50, 100);
+    canvasContext.fillText(player2Score, 50, 500);
+    drawNet();
+}}
+
+function redColor() {
+    window.drawEverything = function(){
+         // Background shape
+         colorRect(0, 0, canvas.width, canvas.height, "red");
+         if (showWinScreen) {
+             canvasContext.fillStyle = "white";
+             canvasContext.fillText("CLICK TO START", 70, canvas.height / 2);
+             canvasContext.font = "bold 30px Arial";
+             if (player1Score >= winScore) {
+                 canvasContext.fillText("Soulless machine won!", 35, 200);
+             } else if (player2Score >= winScore) {
+                 canvasContext.fillText("A WINRAR is you!", 70, 200);
+             } return;
+    }
+    colorCircle(ballX, ballY, 7, "white");
+    colorRect(paddle1X, 587, paddleWidth, paddleThickness, "white");
+    colorRect(paddle2X, 0, paddleWidth, paddleThickness, "white");
+    canvasContext.fillText(player1Score, 50, 100);
+    canvasContext.fillText(player2Score, 50, 500);
+    drawNet();
+}}
+
+function blueColor() {
+    window.drawEverything = function(){
+         // Background shape
+         colorRect(0, 0, canvas.width, canvas.height, "blue");
+         if (showWinScreen) {
+             canvasContext.fillStyle = "white";
+             canvasContext.fillText("CLICK TO START", 70, canvas.height / 2);
+             canvasContext.font = "bold 30px Arial";
+             if (player1Score >= winScore) {
+                 canvasContext.fillText("Soulless machine won!", 35, 200);
+             } else if (player2Score >= winScore) {
+                 canvasContext.fillText("A WINRAR is you!", 70, 200);
+             } return;
+    }
+    colorCircle(ballX, ballY, 7, "white");
+    colorRect(paddle1X, 587, paddleWidth, paddleThickness, "white");
+    colorRect(paddle2X, 0, paddleWidth, paddleThickness, "white");
+    canvasContext.fillText(player1Score, 50, 100);
+    canvasContext.fillText(player2Score, 50, 500);
+    drawNet();
+}}
+
+function orangeColor() {
+    window.drawEverything = function(){
+         // Background shape
+         colorRect(0, 0, canvas.width, canvas.height, "orange");
+         if (showWinScreen) {
+             canvasContext.fillStyle = "white";
+             canvasContext.fillText("CLICK TO START", 70, canvas.height / 2);
+             canvasContext.font = "bold 30px Arial";
+             if (player1Score >= winScore) {
+                 canvasContext.fillText("Soulless machine won!", 35, 200);
+             } else if (player2Score >= winScore) {
+                 canvasContext.fillText("A WINRAR is you!", 70, 200);
+             } return;
+    }
+    colorCircle(ballX, ballY, 7, "white");
+    colorRect(paddle1X, 587, paddleWidth, paddleThickness, "white");
+    colorRect(paddle2X, 0, paddleWidth, paddleThickness, "white");
+    canvasContext.fillText(player1Score, 50, 100);
+    canvasContext.fillText(player2Score, 50, 500);
+    drawNet();
+}}
+
 //Difficulty selector
 function changeDifficulty() {
     let z = document.getElementById("difficulty").value; 
@@ -106,9 +240,48 @@ case
  "super_hard":
  AI_super_hard()
  document.getElementById("image").src = "resources/img/Difficulty_4.png";
- naniSound.play()
+ if (hitSound1 != mute) {
+ naniSound.play() }
     break; 
 }
 console.log(z);
   }
 
+//Color selector
+function changeColor() {
+    let c = document.getElementById("color").value; 
+switch
+(c) { 
+case
+ "skyblue":
+skyblueColor()
+document.getElementById("color").class = color.style.color="skyblue"
+    break;
+case
+ "black":
+ blackColor()
+ document.getElementById("color").class = color.style.color="black"
+    break;
+case
+ "green":
+ greenColor()
+ document.getElementById("color").class = color.style.color="green"
+    break;
+case
+ "red":
+ redColor()
+ document.getElementById("color").class = color.style.color="red"
+    break;  
+case
+ "blue":
+ blueColor()
+ document.getElementById("color").class = color.style.color="blue"
+    break; 
+case
+ "orange":
+ orangeColor()
+ document.getElementById("color").class =  color.style.color="orange"
+    break; 
+}
+console.log(c);
+  }

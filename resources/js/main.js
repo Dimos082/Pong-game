@@ -10,7 +10,7 @@
     // Winning condition (in sake of QA it was set to 3 points, default = 10)
     let winScore = 1;
 
-    // HTML5 sound. Recorded and voiced by me, so no copyrights involved :-)
+    // HTML5 sound. Recorded and voiced by me (exept nani), so no copyrights involved :-)
     let hitSound1 = new Audio("resources/sound/hitsound1.mp3");
     let hitSound2 = new Audio("resources/sound/hitsound2.mp3");
     let sideHitSound = new Audio("resources/sound/sidehitsound.mp3");
