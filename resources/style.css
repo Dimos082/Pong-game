@@ -6,6 +6,13 @@ div {
     display:flex;
 }
 
+.skyblue { background-color:skyblue}
+.green { background-color:green; }
+.blue { background-color:blue; }
+.red { background-color:red; }
+.black { background-color:black; }
+.orange { background-color: orange;}
+
 /* For mobile devices */
 @media (max-height: 800px) {
 body {
