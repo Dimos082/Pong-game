@@ -6,8 +6,26 @@
 //     ballSpeedY = 10;
 //     }
 
+// Functions for ball speed full stop and resume
+function pauseGame() {
+    currentXspeed = ballSpeedX;
+    currentYspeed = ballSpeedY;
+    // current_AI = AI;
+    console.log(currentXspeed, currentYspeed);
+ballSpeedX = 0;
+ballSpeedY = 0;
+// AI_disabled()
+}
+
+function resumeGame() {
+    console.log(currentXspeed, currentYspeed);
+    ballSpeedX = currentXspeed;
+    ballSpeedY = currentYspeed;
+    // AI = current_AI;
+}
+
 // Toggle for mute
-function mute() {
+function muteEverything() {
     hitSound1.muted ^= true;
     hitSound2.muted ^= true;
     sideHitSound.muted ^= true;
@@ -18,6 +36,18 @@ function mute() {
 }
 
 // Changing The Execution Context Of AI function
+function AI_disabled() {
+    window.AI = function(){
+        let paddle2XCenter = paddle2X + (paddleWidth / 2);
+    if (paddle2XCenter < ballX - 35) {
+         paddle2X += 0;
+    } else if (paddle2XCenter > ballX + 35) {
+         paddle2X -= 0;
+    }
+    console.log('AI disabled');
+  }
+}
+
 function AI_super_easy() {
     window.AI = function(){
         let paddle2XCenter = paddle2X + (paddleWidth / 2);
@@ -240,8 +270,7 @@ case
  "super_hard":
  AI_super_hard()
  document.getElementById("image").src = "resources/img/Difficulty_4.png";
- if (hitSound1 != mute) {
- naniSound.play() }
+ naniSound.play()
     break; 
 }
 console.log(z);
@@ -285,3 +314,4 @@ case
 }
 console.log(c);
   }
+
