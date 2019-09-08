@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <canvas id="gameCanvas" width="400" height="600"></canvas>
+    <canvas id="gameCanvas" width="400" height="600" onmouseenter="resumeGame()" onmouseleave="pauseGame()"></canvas>
   <div>
-    <button onclick="mute()" >🔊</button>
+    <button onclick="muteEverything()" >🔊</button>
     <!-- <button onclick="" >test</button> -->
     <img id="image" src="resources/img/Difficulty.png" height="35" width="25"></img>
     <select id="difficulty" onchange="changeDifficulty()">
