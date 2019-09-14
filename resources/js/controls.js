@@ -6,15 +6,21 @@
 //     ballSpeedY = 10;
 //     }
 
+// Number of rounds to win listener
+document.getElementById("rounds").addEventListener("click", function(){
+    winScore = rounds.value;
+  });
+
 // Functions for ball speed full stop and resume
 function pauseGame() {
     currentXspeed = ballSpeedX;
     currentYspeed = ballSpeedY;
-    // current_AI = AI;
+    current_AI = AI;
     console.log(currentXspeed, currentYspeed);
 ballSpeedX = 0;
 ballSpeedY = 0;
 // AI_disabled()
+// console.log(current_AI)
 }
 
 function resumeGame() {
@@ -22,6 +28,7 @@ function resumeGame() {
     ballSpeedX = currentXspeed;
     ballSpeedY = currentYspeed;
     // AI = current_AI;
+    // console.log(AI)
 }
 
 // Toggle for mute
@@ -38,12 +45,7 @@ function muteEverything() {
 // Changing The Execution Context Of AI function
 function AI_disabled() {
     window.AI = function(){
-        let paddle2XCenter = paddle2X + (paddleWidth / 2);
-    if (paddle2XCenter < ballX - 35) {
-         paddle2X += 0;
-    } else if (paddle2XCenter > ballX + 35) {
-         paddle2X -= 0;
-    }
+
     console.log('AI disabled');
   }
 }
