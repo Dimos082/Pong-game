@@ -11,7 +11,6 @@ div {
     position: relative;
     bottom: 30%;
     left: 15px;
-    /* left: 36.5%; */
     font-size: 10px;
 }
 
@@ -19,10 +18,7 @@ div {
     position: relative;
     right: 50%;
     top: 40%;
-    /* z-index: 1; */
-    display:flex;
     height: 20px;
-    /* width: 10px; */
 }
 
 .skyblue { background-color:skyblue}
