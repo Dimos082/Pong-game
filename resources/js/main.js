@@ -4,11 +4,14 @@
     let ballY = 50; 
     let ballSpeedX = 4;
     let ballSpeedY = 10;
+    let currentXspeed = ballSpeedX;  //save ball speed for pauseGame()
+    let currentYspeed = ballSpeedY;  //save ball speed for pauseGame()
 
     let player1Score = 0;
     let player2Score = 0;
     // Winning condition (in sake of QA it was set to 3 points, default = 10)
     let winScore = 1;
+    gamePaused = false;
 
     // HTML5 sound. Recorded and voiced by me (exept nani), so no copyrights involved :-)
     let hitSound1 = new Audio("resources/sound/hitsound1.mp3");
@@ -120,7 +123,7 @@
             paddle2X += 15;
         } else if (paddle2XCenter > ballX + 35) {
             paddle2X -= 15;
-        }
+        } 
     }
     // Adds movement to ball and computer's paddle
     function moveEverything() {
@@ -128,7 +131,7 @@
             return;
         }
         // Enables computer player's AI
-        AI();
+        if (gamePaused != true) {AI()} ;
         // Adds speed to ball 
         ballX += ballSpeedX;
         ballY += ballSpeedY;

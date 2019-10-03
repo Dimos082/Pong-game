@@ -13,18 +13,20 @@ document.getElementById("rounds").addEventListener("click", function(){
 
 // Functions for ball speed full stop and resume
 function pauseGame() {
-    currentXspeed = ballSpeedX;
+    gamePaused = true;
+    // current_AI = AI;
+    // console.log(currentXspeed, currentYspeed);
+    currentXspeed = ballSpeedX; 
     currentYspeed = ballSpeedY;
-    current_AI = AI;
-    console.log(currentXspeed, currentYspeed);
 ballSpeedX = 0;
 ballSpeedY = 0;
-// AI_disabled()
+// AI_disabled();
 // console.log(current_AI)
 }
 
 function resumeGame() {
-    console.log(currentXspeed, currentYspeed);
+    gamePaused = false;
+    // console.log(currentXspeed, currentYspeed);
     ballSpeedX = currentXspeed;
     ballSpeedY = currentYspeed;
     // AI = current_AI;
