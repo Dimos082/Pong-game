@@ -7,8 +7,9 @@
 //     }
 
 // Number of rounds to win listener
-document.getElementById("rounds").addEventListener("click", function(){
+document.getElementById("rounds").addEventListener("keyup", function(){
     winScore = rounds.value;
+    console.log(rounds.value);
   });
 
 // Functions for ball speed full stop and resume
