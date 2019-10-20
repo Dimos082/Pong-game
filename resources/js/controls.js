@@ -12,6 +12,13 @@ document.getElementById("rounds").addEventListener("keyup", function(){
     console.log(rounds.value);
   });
 
+document.getElementById("rounds").addEventListener("click", function(){
+    winScore = rounds.value;
+    console.log(rounds.value);
+  });
+
+
+
 // Functions for ball speed full stop and resume
 function pauseGame() {
     gamePaused = true;
