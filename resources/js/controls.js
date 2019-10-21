@@ -16,9 +16,6 @@ document.getElementById("rounds").addEventListener("click", function(){
     winScore = rounds.value;
     console.log(rounds.value);
   });
-
-
-
 // Functions for ball speed full stop and resume
 function pauseGame() {
     gamePaused = true;
@@ -53,12 +50,11 @@ function muteEverything() {
 }
 
 // Changing The Execution Context Of AI function
-function AI_disabled() {
-    window.AI = function(){
-
-    console.log('AI disabled');
-  }
-}
+// function AI_disabled() {
+//     window.AI = function(){
+//     console.log('AI disabled');
+//   }
+// }
 
 function AI_super_easy() {
     window.AI = function(){
@@ -119,8 +115,7 @@ function AI_super_hard() {
     console.log('super hard');
   }
 }
-
-// Changing The Execution Context Of drawEverything function
+// Changing The Execution Context Of drawEverything function for color change
 function skyblueColor() {
     window.drawEverything = function(){
          // Background shape
@@ -252,7 +247,6 @@ function orangeColor() {
     canvasContext.fillText(player2Score, 50, 500);
     drawNet();
 }}
-
 //Difficulty selector
 function changeDifficulty() {
     let z = document.getElementById("difficulty").value; 
@@ -287,7 +281,6 @@ case
 }
 console.log(z);
   }
-
 //Color selector
 function changeColor() {
     let c = document.getElementById("color").value; 
@@ -326,4 +319,3 @@ case
 }
 console.log(c);
   }
-
