@@ -9,10 +9,10 @@
 
     let player1Score = 0;
     let player2Score = 0;
-    // Winning condition (in sake of QA it was set to 3 points, default = 10)
-    let winScore = 1;
-    gamePaused = false;
+    // Winning condition (number of rounds to win) Must be equal to counter value in HTML
+    let winScore = 3;
 
+    gamePaused = false;
     // HTML5 sound. Recorded and voiced by me (exept nani), so no copyrights involved :-)
     let hitSound1 = new Audio("resources/sound/hitsound1.mp3");
     let hitSound2 = new Audio("resources/sound/hitsound2.mp3");
@@ -35,7 +35,6 @@
     new Audio("resources/sound/lostsound3.mp3"),
     new Audio("resources/sound/lostsound4.mp3")
     ];
-
     // Those 2 functions below throw a random win/lose sound
     function playWinSound() {
         let winSound = winSounds[Math.floor(Math.random() * winSounds.length)];
@@ -48,7 +47,6 @@
     }
 
     let showWinScreen = true;
-
     let paddle1X = 100;
     let paddle2X = 100;
     let paddleWidth = 100;
@@ -73,7 +71,6 @@
                 paddle1X = mousePos.x - (paddleWidth / 2);
             });
     }
-
     // Binds player's paddle to a mouse position
     function calculateMousePos(evt) {
         let rect = canvas.getBoundingClientRect();
@@ -93,7 +90,6 @@
             showWinScreen = false;
         }
     }
-
     // Set ball's position far against paddle1x if paddle 2 (comp) wins 1 point
     function ballResetPaddle1x() {
         if (player1Score >= winScore) {
@@ -183,7 +179,7 @@
                 // Winning condition for computer player
                 player1Score++; //adds one point
                 offSideSound.play(); //plays sound
-                // ball position afrer computer scores
+                // ball position after computer scores
                 ballResetPaddle1x();
             }
         }
@@ -203,19 +199,14 @@
                 canvasContext.fillText("A WINRAR is you!", 70, 200);
             } return;
         }
-
         // Calls Net shape
         drawNet();
-
         // Calls Ball shape
         colorCircle(ballX, ballY, 7, "white")
-
         // Calls Bottom paddle shape
         colorRect(paddle1X, 587, paddleWidth, paddleThickness, "white");
-
         // Calls Upper paddle shape
         colorRect(paddle2X, 0, paddleWidth, paddleThickness, "white");
-
         // Displays score counters positions
         canvasContext.fillText(player1Score, 50, 100);
         canvasContext.fillText(player2Score, 50, 500);
@@ -243,5 +234,10 @@
             colorRect(i + 10, canvas.height / 2, 20, 2, "white");
         }
         // colorRect(0, canvas.height/2, 400, 2, "white");
+        // Pause game message
+        if (gamePaused != false) {
+            canvasContext.fillStyle = "white";
+             canvasContext.fillText("GAME PAUSED", 90, canvas.height / 2);
+             canvasContext.font = "bold 30px Arial";
+        }
     }
-
